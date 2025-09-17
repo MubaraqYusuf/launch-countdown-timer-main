@@ -1,0 +1,373 @@
+/* Bottom bar for hills and icons */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hills-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.bottom-icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 2;
+  pointer-events: auto;
+}
+/* Frontend Mentor - Launch countdown timer solution */
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, hsl(236, 21%, 26%) 0%, hsl(235, 16%, 14%) 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Stars background pattern */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  text-align: center;
+  max-width: 1110px;
+  width: 100%;
+}
+
+.title {
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flip-card {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-desaturated-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 0 0 var(--very-dark-mostly-black-blue);
+}
+
+.flip-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--very-dark-mostly-black-blue);
+  z-index: 1;
+}
+
+.flip-card-front {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number {
+  color: var(--soft-red);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.label {
+  color: var(--grayish-blue);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  z-index: 2;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover svg path {
+  fill: var(--soft-red);
+}
+
+.hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hills svg {
+  display: none;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+  color: var(--grayish-blue);
+  z-index: 10;
+}
+
+.attribution a {
+  color: var(--soft-red);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 375px) {
+  .title {
+    font-size: 1.25rem;
+  }
+  
+  .flip-card {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .number {
+    font-size: 2.25rem;
+  }
+  
+  .label {
+    font-size: 0.55rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 1.375rem;
+    margin-bottom: 5rem;
+  }
+  
+  .countdown {
+    gap: 1.5rem;
+    margin-bottom: 6rem;
+  }
+  
+  .flip-card {
+    width: 88px;
+    height: 88px;
+    border-radius: 10px;
+  }
+  
+  .flip-card-inner {
+    border-radius: 10px;
+  }
+  
+  .number {
+    font-size: 2.75rem;
+  }
+  
+  .label {
+    font-size: 0.625rem;
+  }
+  
+  .social-icons {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .countdown {
+    gap: 2rem;
+    margin-bottom: 7rem;
+  }
+  
+  .flip-card {
+    width: 96px;
+    height: 96px;
+  }
+  
+  .number {
+    font-size: 3rem;
+  }
+  
+  .label {
+    font-size: 0.75rem;
+  }
+  
+  .social-icons {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 6rem;
+  }
+  
+  .countdown {
+    gap: 2.5rem;
+    margin-bottom: 8rem;
+  }
+  
+  .flip-card {
+    width: 112px;
+    height: 112px;
+    border-radius: 12px;
+  }
+  
+  .flip-card-inner {
+    border-radius: 12px;
+  }
+  
+  .number {
+    font-size: 3.5rem;
+  }
+  
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .countdown {
+    gap: 3rem;
+    margin-bottom: 9rem;
+  }
+  
+  .flip-card {
+    width: 128px;
+    height: 128px;
+    border-radius: 14px;
+  }
+  
+  .flip-card-inner {
+    border-radius: 14px;
+  }
+  
+  .number {
+    font-size: 4rem;
+  }
+  
+  .label {
+    font-size: 1rem;
+  }
+}

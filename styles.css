@@ -1,0 +1,326 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    background: #1e1f29;
+}
+
+/* Container and background */
+.container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.background-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #1e1f29 0%, #2a2c44 50%, #3a2c54 100%);
+    z-index: 1;
+}
+
+.stars-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    z-index: 2;
+    background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                      radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.6; }
+    100% { opacity: 0.8; }
+}
+
+/* Main content */
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 64rem;
+    width: 100%;
+}
+
+/* Main title */
+.main-title {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* Countdown container */
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+/* Time unit styling */
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box {
+    background: #343650;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.time-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.time-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fb6087;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.time-label {
+    font-size: 0.5rem;
+    color: #8486a9;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.social-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8486a9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #fb6087;
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Bottom waves */
+.bottom-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    z-index: 5;
+}
+
+.bottom-waves svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive design */
+@media (min-width: 375px) {
+    .main-title {
+        font-size: 1.25rem;
+        margin-bottom: 4rem;
+    }
+    
+    .countdown-container {
+        gap: 1.25rem;
+        margin-bottom: 5rem;
+    }
+    
+    .time-box {
+        width: 4.75rem;
+        height: 4.75rem;
+        padding: 1.25rem;
+    }
+    
+    .time-value {
+        font-size: 2.25rem;
+    }
+    
+    .time-label {
+        font-size: 0.55rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .main-title {
+        font-size: 1.375rem;
+        margin-bottom: 5rem;
+    }
+    
+    .countdown-container {
+        gap: 1.5rem;
+        margin-bottom: 6rem;
+    }
+    
+    .time-box {
+        width: 5.5rem;
+        height: 5.5rem;
+        padding: 1.5rem;
+    }
+    
+    .time-value {
+        font-size: 2.75rem;
+    }
+    
+    .time-label {
+        font-size: 0.625rem;
+    }
+    
+    .social-icons {
+        gap: 2.5rem;
+    }
+    
+    .social-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+    
+    .bottom-waves {
+        height: 10rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-title {
+        font-size: 1.5rem;
+        margin-bottom: 5rem;
+    }
+    
+    .countdown-container {
+        gap: 2rem;
+        margin-bottom: 7rem;
+    }
+    
+    .time-box {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 10px;
+    }
+    
+    .time-value {
+        font-size: 3rem;
+    }
+    
+    .time-label {
+        font-size: 0.75rem;
+    }
+    
+    .social-icons {
+        gap: 3rem;
+    }
+    
+    .bottom-waves {
+        height: 12rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-title {
+        font-size: 1.75rem;
+        margin-bottom: 6rem;
+    }
+    
+    .countdown-container {
+        gap: 2.5rem;
+        margin-bottom: 8rem;
+    }
+    
+    .time-box {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 12px;
+    }
+    
+    .time-value {
+        font-size: 3.5rem;
+    }
+    
+    .time-label {
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .main-title {
+        font-size: 2rem;
+        margin-bottom: 6rem;
+    }
+    
+    .countdown-container {
+        gap: 3rem;
+        margin-bottom: 9rem;
+    }
+    
+    .time-box {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 14px;
+    }
+    
+    .time-value {
+        font-size: 4rem;
+    }
+    
+    .time-label {
+        font-size: 1rem;
+    }
+}

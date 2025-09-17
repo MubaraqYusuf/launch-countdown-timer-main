@@ -33,6 +33,7 @@ images/
 3. All assets are local; no build step required.
 
 ## Credits
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io?ref=challenge)
 - Coded by Sunshine_wrlld
 
 ## Screenshots
