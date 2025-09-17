@@ -37,7 +37,8 @@ images/
 - Coded by Sunshine_wrlld
 
 ## Screenshots
-Add screenshots of desktop and mobile views for better presentation.
+![Screenshot 2025-04-11 164809](https://github.com/user-attachments/assets/fb76b241-1947-4723-b38a-d2a5bd88232e)
 
 ## License
 This project is for educational purposes and challenge completion. See Frontend Mentor for usage guidelines.
+
