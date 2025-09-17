@@ -36,12 +36,14 @@ images/
 - Challenge by [Frontend Mentor](https://www.frontendmentor.io?ref=challenge)
 - Coded by Sunshine_wrlld
 
-## Screenshots
-![Screenshot 2025-04-11 164809](https://github.com/user-attachments/assets/fb76b241-1947-4723-b38a-d2a5bd88232e)
+## Deskstop view Screenshots
+
 <img width="1390" height="808" alt="Screenshot 2025-09-17 200316" src="https://github.com/user-attachments/assets/46577014-a871-4371-83de-8bb4c8e8ba7f" />
 
+## Mobile view Screenshots
 
 ## License
 This project is for educational purposes and challenge completion. See Frontend Mentor for usage guidelines.
+
 
 
