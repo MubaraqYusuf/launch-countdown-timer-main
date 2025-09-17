@@ -1,12 +1,43 @@
-# launch-countdown-timer-main
-📝
-Brief
-Your challenge is to build out this countdown timer and get it looking as close to the design as possible.
+# Launch Countdown Timer
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+This is a solution to the Frontend Mentor Launch Countdown Timer challenge.
 
-Your users should be able to:
+## Features
+- Responsive countdown timer for days, hours, minutes, and seconds
+- Modern design with custom fonts and SVG assets
+- Social media icons (Facebook, Pinterest, Instagram) overlaid on a hills SVG at the bottom
+- Mobile and desktop friendly layout
 
-See hover states for all interactive elements on the page
-See a live countdown timer that ticks down every second
-Bonus: When a number changes, make the card flip from the middle
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript (for countdown logic)
+
+## Folder Structure
+```
+index.html
+style.css
+script.js
+images/
+  pattern-hills.svg
+  icon-facebook.svg
+  icon-instagram.svg
+  icon-pinterest.svg
+  bg-stars.svg
+  favicon-32x32.png
+```
+
+## How to Run
+1. Clone or download this repository.
+2. Open `index.html` in your browser.
+3. All assets are local; no build step required.
+
+## Credits
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io?ref=challenge)
+- Coded by Sunshine_wrlld
+
+## Screenshots
+Add screenshots of desktop and mobile views for better presentation.
+
+## License
+This project is for educational purposes and challenge completion. See Frontend Mentor for usage guidelines.
