@@ -41,9 +41,10 @@ images/
 <img width="1390" height="808" alt="Screenshot 2025-09-17 200316" src="https://github.com/user-attachments/assets/46577014-a871-4371-83de-8bb4c8e8ba7f" />
 
 ## Mobile view Screenshots
+<img width="414" height="758" alt="image0" src="https://github.com/user-attachments/assets/703cf38b-184f-4744-86ee-75d8f8aba25c" />
 
-## License
-This project is for educational purposes and challenge completion. See Frontend Mentor for usage guidelines.
+
+
 
 
 
